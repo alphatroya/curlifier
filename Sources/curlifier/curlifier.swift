@@ -1,10 +1,16 @@
 import Foundation
 
-public func curl(from request: URLRequest) -> String {
+public struct WrongRequestError: Error {
+    public var localizedDescription: String {
+        "cURL command can't be generated"
+    }
+}
+
+public func curl(from request: URLRequest) throws -> String {
     guard let url = request.url,
           let method = request.httpMethod
     else {
-        return "cURL command can't be generated"
+        throw WrongRequestError()
     }
 
     var components = ["curl -v -X \(method)"]
