@@ -1,3 +1,3 @@
 # curlifier
 
-This Swift framework includes a helper method that generates a curl command string for a URLRequest instance, which is useful for debugging purposes.
+This Swift framework features a helper method that creates a cURL command string from a URLRequest instance, providing a convenient tool for debugging.
